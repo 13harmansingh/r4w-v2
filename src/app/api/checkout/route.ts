@@ -110,10 +110,11 @@ export async function POST(request: NextRequest) {
         });
 
         return NextResponse.json({ url: session.url });
-    } catch (error: any) {
+    } catch (error) {
         console.error('Stripe checkout error details:', error);
+        const errorMessage = error instanceof Error ? error.message : 'Error creating checkout session';
         return NextResponse.json(
-            { error: error?.message || 'Error creating checkout session' },
+            { error: errorMessage },
             { status: 500 }
         );
     }
