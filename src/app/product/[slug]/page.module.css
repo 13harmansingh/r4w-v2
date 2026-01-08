@@ -1,0 +1,45 @@
+.main {
+    padding-top: 80px;
+    /* Header space */
+    background: #fff;
+    min-height: 100vh;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    /* Left side wider */
+    gap: 0;
+    /* Minimal gap, maybe border? Chrome screenshot shows white separation */
+    max-width: 100%;
+}
+
+.galleryCol {
+    background: #fff;
+}
+
+.infoCol {
+    padding: 40px 60px;
+    background: #fff;
+    /* Ensure it has height for sticky scrolling context if needed, but grid child usually fine */
+}
+
+.stickyWrapper {
+    position: sticky;
+    top: 120px;
+    /* Below header + spacing */
+}
+
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .infoCol {
+        padding: 24px;
+    }
+
+    .stickyWrapper {
+        position: static;
+    }
+}

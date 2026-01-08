@@ -1,0 +1,25 @@
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    /* Minimal gap between images */
+    width: 100%;
+}
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 0.8;
+    /* Portrait standard */
+    background: #f4f4f4;
+}
+
+.image {
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .featureImageBtn {
+        /* dots for mobile slider if we were advanced, but stack is fine for now */
+    }
+}

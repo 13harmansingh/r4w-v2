@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 40px;
+    justify-content: flex-end;
+    /* Align to right as per screenshot */
+    padding-right: 0px;
+}
+
+.filterLink {
+    font-size: 13px;
+    color: #888;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.filterLink:hover {
+    color: #000;
+}
+
+.active {
+    color: #000;
+}

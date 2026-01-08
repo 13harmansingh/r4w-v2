@@ -1,0 +1,55 @@
+.main {
+    padding-top: 140px;
+    /* Space for fixed header */
+    padding-bottom: 120px;
+    background: #f4f4f4;
+    /* Light minimalist background as seen in screenshot? Or white? Screenshot 507 background looks very light grey/white. */
+    min-height: 100vh;
+}
+
+/* Wait, detailed screenshot 507 has a light grey background #f4f4f4 approx. */
+
+.container {
+    max-width: 100%;
+    padding: 0 48px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 100px;
+    /* Huge spacing */
+}
+
+.pageTitle {
+    font-size: 80px;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    margin: 0;
+    color: #000;
+    /* Screenshot shows Title is Black */
+}
+
+.pageDesc {
+    max-width: 400px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    margin-top: 12px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    /* Large gaps */
+    row-gap: 80px;
+    /* Even larger vertical gaps for the distinctive layout */
+}
+
+/* REVISION:
+Screenshot 507 shows the background is LIGHT (#f2f2f2 maybe), and TEXT is BLACK.
+My ProductCard.module.css used WHITE text. I need to fix that.
+Product Titles in screenshot are BLACK.
+*/
