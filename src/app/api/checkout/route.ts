@@ -105,15 +105,15 @@ export async function POST(request: NextRequest) {
                     },
                 },
             ],
-            success_url: `${process.env.NEXTAUTH_URL || 'http://localhost:3000'}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
-            cancel_url: `${process.env.NEXTAUTH_URL || 'http://localhost:3000'}/shop`,
+            success_url: `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
+            cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/shop`,
         });
 
         return NextResponse.json({ url: session.url });
-    } catch (error) {
-        console.error('Stripe checkout error:', error);
+    } catch (error: any) {
+        console.error('Stripe checkout error details:', error);
         return NextResponse.json(
-            { error: 'Error creating checkout session' },
+            { error: error?.message || 'Error creating checkout session' },
             { status: 500 }
         );
     }

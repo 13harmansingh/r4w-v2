@@ -48,6 +48,46 @@
     /* Even larger vertical gaps for the distinctive layout */
 }
 
+/* Responsive */
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+        row-gap: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding-top: 100px;
+        padding-bottom: 80px;
+    }
+
+    .container {
+        padding: 0 24px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        margin-bottom: 60px;
+    }
+
+    .pageTitle {
+        font-size: 48px;
+    }
+
+    .pageDesc {
+        font-size: 13px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        row-gap: 48px;
+    }
+}
+
 /* REVISION:
 Screenshot 507 shows the background is LIGHT (#f2f2f2 maybe), and TEXT is BLACK.
 My ProductCard.module.css used WHITE text. I need to fix that.
