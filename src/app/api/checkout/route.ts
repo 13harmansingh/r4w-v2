@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
         const supabase = await createClient();
         const { data: { user } } = await supabase.auth.getUser();
 
-        const origin = request.headers.get('origin') || process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+        const origin = request.nextUrl.origin;
 
         // Create Stripe Checkout Session
         const session = await stripe.checkout.sessions.create({
